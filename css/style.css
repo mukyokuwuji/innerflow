@@ -3,26 +3,29 @@
    ========================================== */
 
 /* Prevent text size adjustment */
-html { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; }
+html { 
+  -webkit-text-size-adjust: 100%; 
+  -ms-text-size-adjust: 100%; 
+  text-size-adjust: 100%; 
+  scroll-behavior: smooth; 
+}
 
 body {
-  /* === FONT: Use Inter as primary for body now, Poppins for headers === */
+  /* === FONT: Use Inter as primary for body, Poppins for headers === */
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-weight: 400; /* Regular weight for body */
-  font-size: 16px; /* Base size */
-  line-height: 1.7; /* Slightly increased line-height for readability */
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
   /* === COLOR: Default text color to near-black === */
   color: #222222;
-  background-color: #555; /* Dark fallback background */
+  background-color: #f5f5f5; /* Lighter background that matches the design better */
   margin: 0;
   padding: 0;
 }
 
 /* Background Image Styling */
 body.has-background {
-  /* === MAKE SURE THIS PATH IS CORRECT === */
   background-image: url('/img/frst.jpg');
-  /* ===================================== */
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -30,12 +33,12 @@ body.has-background {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  /* === FONT: Use Poppins for headers === */
   font-family: 'Poppins', 'Inter', sans-serif;
-  font-weight: 700; /* Bold headers */
-  color: #111111; /* Slightly darker black for headers */
-  line-height: 1.3; /* Tighter line height for headers */
-  margin: 1.5em 0 0.8em 0; /* Consistent heading margins */
+  font-weight: 700;
+  color: #111111;
+  line-height: 1.3;
+  margin: 1.5em 0 0.8em 0;
+  text-align: left; /* Consistent alignment */
 }
 
 /* Specific heading sizes */
@@ -43,7 +46,7 @@ h1 { font-size: 2.2em; margin-top: 0; }
 h2 { font-size: 1.5em; }
 
 img { max-width: 100%; height: auto; vertical-align: middle; }
-a { color: #005999; /* Adjust link color */ text-decoration: none; transition: color 0.2s ease; }
+a { color: #005999; text-decoration: none; transition: color 0.2s ease; }
 a:hover { color: #003366; text-decoration: underline; }
 p { margin-bottom: 1.2em; }
 
@@ -58,12 +61,10 @@ p { margin-bottom: 1.2em; }
 .page-wrapper {
   max-width: 840px;
   margin: 5vh auto;
-  padding: 2.5em 3.5em; /* Adjust padding */
-  /* === BACKGROUND: Light/Milky Transparent === */
-  background-color: rgba(250, 250, 250, 0.88); /* Off-white at 88% opacity - ADJUST ALPHA (0.88) AS NEEDED */
-  /* === END BACKGROUND === */
-  border-radius: 10px; /* Slightly less rounded */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Softer shadow */
+  padding: 2.5em 3.5em;
+  background-color: rgba(250, 250, 250, 0.88);
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   min-height: 80vh;
 }
@@ -78,16 +79,14 @@ p { margin-bottom: 1.2em; }
 
 .lang-button {
   display: inline-block;
-  font-family: 'Inter', sans-serif; /* Use sans-serif for buttons */
+  font-family: 'Inter', sans-serif;
   font-size: 0.9em;
-  font-weight: 700; /* Bold */
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   background-color: transparent;
-  /* === STYLE: Darker border/text for light background === */
   border: 1px solid rgba(0, 0, 0, 0.3);
   color: #555555;
-  /* === END STYLE === */
   padding: 0.7em 1.4em;
   border-radius: 6px;
   cursor: pointer;
@@ -96,19 +95,15 @@ p { margin-bottom: 1.2em; }
 }
 
 .lang-button:hover {
-  /* === STYLE: Darker hover === */
   background-color: rgba(0, 0, 0, 0.05);
   border-color: rgba(0, 0, 0, 0.6);
   color: #111111;
-  /* === END STYLE === */
 }
 
 .lang-button.is-active {
-  /* === STYLE: Dark active state === */
   background-color: #333333;
   border-color: #333333;
-  color: #ffffff; /* White text on active button */
-  /* === END STYLE === */
+  color: #ffffff;
   cursor: default;
 }
 
@@ -116,343 +111,198 @@ p { margin-bottom: 1.2em; }
    Language Content Sections
    ========================================== */
 .language-content {
-  display: none; /* Hide inactive */
+  display: none;
   width: 100%;
-  text-align: left; /* Default to left align */
+  text-align: left;
 }
-.language-content.is-active { display: block; animation: fadeIn 0.5s ease-in-out; }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-/* Specific content styling */
-.language-content h1,
-.language-content h2 { text-align: left; } /* Ensure headings are left */
+.language-content.is-active { 
+  display: block; 
+  animation: fadeIn 0.5s ease-in-out; 
+}
+
+@keyframes fadeIn { 
+  from { opacity: 0; } 
+  to { opacity: 1; } 
+}
 
 /* List styling */
 .language-content ul.qigong-features {
-  list-style: none; padding: 0; margin: 1.5em 0; text-align: left;
+  list-style: none;
+  padding: 0;
+  margin: 1.5em 0;
+  text-align: left;
 }
+
 .language-content ul.qigong-features li {
-  padding-left: 1.8em; /* Indent for bullet */ position: relative; margin-bottom: 0.7em;
+  padding-left: 1.8em;
+  position: relative;
+  margin-bottom: 0.7em;
 }
+
 .language-content ul.qigong-features li::before {
-  content: '›'; position: absolute; left: 0.5em; /* Adjust bullet position */ top: 0.05em;
-  /* === STYLE: Darker bullet === */
+  content: '›';
+  position: absolute;
+  left: 0.5em;
+  top: 0.05em;
   color: rgba(0, 0, 0, 0.5);
-  /* === END STYLE === */
   font-weight: bold;
 }
-.language-content p.classes-info { font-style: italic; font-size: 0.95em; color: #444; margin-top: 1.5em; }
-.language-content img.profile-pic { max-width: 150px; border-radius: 50%; margin: 0 auto 1.5em auto; display: block; }
-.language-content .contact-methods,
-.language-content .schedule-info,
-.language-content .closing-statement { text-align: left; /* Ensure these paragraphs left align */ }
 
-/* ==========================================
-   Page Footer Styles
-   ========================================== */
-.page-footer {
-  margin-top: 3em; padding-top: 1.5em;
-  /* === STYLE: Darker border === */
-  border-top: 1px solid rgba(0, 0, 0, 0.15);
-  /* === END STYLE === */
-  width: 100%; text-align: center;
-}
-.copyright,
-.last-updated {
-  font-family: 'Inter', system-ui, sans-serif; font-size: 0.85em;
-  /* === STYLE: Darker grey text === */
-  color: #666666;
-  /* === END STYLE === */
-  line-height: 1.5; margin-bottom: 0.5em;
+.language-content p.classes-info { 
+  font-style: italic; 
+  font-size: 0.95em; 
+  color: #444; 
+  margin-top: 1.5em; 
 }
 
 /* ==========================================
-   Responsive Adjustments
+   Profile Photo Styling
    ========================================== */
-@media (max-width: 700px) {
-    body.has-background { background-attachment: scroll; }
-    .page-wrapper { max-width: 90%; margin: 5vh auto; padding: 1.5em; min-height: 0; }
-    h1, .language-content h1 { font-size: 1.8em; } /* Consistent mobile H1 */
-    h2, .language-content h2 { font-size: 1.3em; } /* Consistent mobile H2 */
-    body { font-size: 15px; } /* Slightly smaller base font on mobile */
-    .language-content ul.qigong-features li { padding-left: 1.5em; }
-    .language-content ul.qigong-features li::before { left: 0.3em; }
-    .lang-button { padding: 0.6em 1.2em; margin: 0 0.3em; }
+.header-container {
+  position: relative;
+  margin-bottom: 2em;
+  padding-right: 140px;
 }
 
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: transform 0.3s ease;
+}
 
-
-
+.profile-photo:hover {
+  transform: scale(1.05);
+}
 
 /* ==========================================
    Social Media Icons
    ========================================== */
-   .social-icons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin: 0.8em 0;
-  }
-  
-  .social-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.08);
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .social-icon:hover {
-    transform: translateY(-3px);
-    background-color: rgba(0, 0, 0, 0.12);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .social-icon svg {
-    width: 18px;
-    height: 18px;
-    fill: #555555;
-  }
-  
-  .social-icon:hover svg {
-    fill: #333333;
-  }
-  
-  /* Specific icon colours on hover */
-  .social-icon.kakao:hover {
-    background-color: rgba(254, 229, 0, 0.2);
-  }
-  
-  .social-icon.kakao:hover svg {
-    fill: #3A1D1D;
-  }
-  
-  .social-icon.instagram:hover {
-    background: linear-gradient(45deg, rgba(64, 93, 230, 0.1), rgba(131, 58, 180, 0.1), rgba(225, 48, 108, 0.1));
-  }
-  
-  .social-icon.instagram:hover svg {
-    fill: #C13584;
-  }
-  
-  .social-icon.email:hover {
-    background-color: rgba(66, 133, 244, 0.1);
-  }
-  
-  .social-icon.email:hover svg {
-    fill: #4285F4;
-  }
-  
-  /* For mobile responsiveness */
-  @media (max-width: 700px) {
-    .social-icons {
-      gap: 12px;
-    }
-    
-    .social-icon {
-      width: 32px;
-      height: 32px;
-    }
-    
-    .social-icon svg {
-      width: 16px;
-      height: 16px;
-    }
-  }
+.social-icons {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 15px;
+  margin: 0.8em 0;
+  overflow-x: visible;
+}
 
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease-in-out;
+  flex-shrink: 0;
+}
 
+.social-icon:hover {
+  transform: translateY(-3px);
+  background-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
+.social-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+}
 
+.social-icon:hover svg {
+  fill: #333333;
+}
 
-/* ==========================================
-   Social Media Icons - Fixed Desktop Layout
-   ========================================== */
-   .social-icons {
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap; /* Prevent wrapping */
-    gap: 15px;
-    margin: 0.8em 0;
-    overflow-x: visible; /* Reset to visible for desktop */
-  }
-  
-  /* Email container - ensure proper display across all screen sizes */
-  .email-container {
-    display: inline-flex; /* Change to inline-flex */
-    align-items: center;
-    position: relative;
-    flex-shrink: 0; /* Prevent shrinking */
-    vertical-align: middle; /* Align with other icons */
-  }
-  
-  .copy-email-btn {
-    margin-left: 8px;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.8em;
-    font-weight: 500;
-    padding: 6px 12px;
-    border-radius: 20px;
-    border: 1px solid rgba(66, 133, 244, 0.3);
-    background-color: rgba(66, 133, 244, 0.05);
-    color: #4285F4;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    letter-spacing: 0.01em;
-    white-space: nowrap;
-    min-width: max-content;
-    display: inline-block; /* Changed to inline-block */
-    vertical-align: middle; /* Align with other elements */
-  }
-  
-  .copy-feedback {
-    position: absolute;
-    bottom: calc(100% + 5px);
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.85);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 0.75em;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-    transform-origin: bottom center;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    white-space: nowrap;
-    z-index: 10; /* Ensure tooltip appears above other elements */
-  }
+/* Specific icon colors on hover */
+.social-icon.kakao:hover {
+  background-color: rgba(254, 229, 0, 0.2);
+}
 
-  /* Make the feedback visible when the 'visible' class is added */
+.social-icon.kakao:hover svg {
+  fill: #3A1D1D;
+}
+
+.social-icon.instagram:hover {
+  background: linear-gradient(45deg, rgba(64, 93, 230, 0.1), rgba(131, 58, 180, 0.1), rgba(225, 48, 108, 0.1));
+}
+
+.social-icon.instagram:hover svg {
+  fill: #C13584;
+}
+
+.social-icon.email:hover {
+  background-color: rgba(66, 133, 244, 0.1);
+}
+
+.social-icon.email:hover svg {
+  fill: #4285F4;
+}
+
+/* Email container styling */
+.email-container {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.copy-email-btn {
+  margin-left: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8em;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(66, 133, 244, 0.3);
+  background-color: rgba(66, 133, 244, 0.05);
+  color: #4285F4;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  min-width: max-content;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.copy-feedback {
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.75em;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  transform-origin: bottom center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  z-index: 10;
+}
+
 .copy-feedback.visible {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
 }
-  
-  /* For mobile responsiveness - updated */
-  @media (max-width: 700px) {
-    .social-icons {
-      gap: 10px;
-      overflow-x: auto; /* Allow horizontal scrolling on mobile */
-      -webkit-overflow-scrolling: touch;
-      padding-bottom: 5px;
-    }
-    
-    .social-icon {
-      width: 32px;
-      height: 32px;
-      flex-shrink: 0;
-    }
-    
-    .social-icon svg {
-      width: 16px;
-      height: 16px;
-    }
-    
-    /* Keep layout tight on mobile */
-    .email-container {
-      flex: 0 0 auto;
-    }
-    
-    .copy-email-btn {
-      padding: 4px 10px;
-      font-size: 0.75em;
-    }
-    
-    /* Adjust the kakao-code on mobile only */
-    .kakao-code {
-      display: block;
-      width: 100%;
-      margin: 10px 0 15px;
-      padding: 8px;
-      text-align: center;
-      background-color: rgba(254, 229, 0, 0.2);
-      border-radius: 6px;
-      font-size: 0.9em;
-    }
-  }
-
-
-
-
-
-/* ==========================================
-   Profile Photo Styling
-   ========================================== */
-   .header-container {
-    position: relative;
-    margin-bottom: 2em;
-    /* Fix the overlap */
-  padding-right: 140px;
-  }
-  
-  .profile-photo {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    top: 0;
-    right: 0;
-    transition: transform 0.3s ease;
-  }
-  
-  .profile-photo:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 900px) {
-    .profile-photo {
-      width: 100px;
-      height: 100px;
-    }
-  }
-  
-  
-
-
-
-  @media (max-width: 700px) {
-    .header-container {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start; /* Changed from center to flex-start for left alignment */
-      text-align: left; /* Changed from center to left */
-      margin-bottom: 1.5em;
-      padding-right: 0; /* Remove right padding in mobile view */
-    }
-    
-    .profile-photo {
-      position: relative;
-      width: 90px;
-      height: 90px;
-      margin-bottom: 1em;
-      order: 1; /* Changed from -1 to 1 to show photo after heading */
-      margin-top: 1em; /* Add space between heading and photo */
-      right: auto; /* Reset the right position */
-    }
-    
-    .header-container h1 {
-      margin-top: 0;
-      font-size: 1.7em;
-      width: 100%; /* Ensure full width */
-    }
-}
-
-
-
-
 
 /* Styling for KakaoTalk join code */
 .kakao-code {
@@ -469,23 +319,140 @@ p { margin-bottom: 1.2em; }
   letter-spacing: 0.5px;
 }
 
-/* Improved mobile styling */
+/* ==========================================
+   Page Footer Styles
+   ========================================== */
+.page-footer {
+  margin-top: 3em;
+  padding-top: 1.5em;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  width: 100%;
+  text-align: center;
+}
+
+.copyright,
+.last-updated {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85em;
+  color: #666666;
+  line-height: 1.5;
+  margin-bottom: 0.5em;
+}
+
+/* ==========================================
+   Responsive Adjustments
+   ========================================== */
+@media (max-width: 900px) {
+  .profile-photo {
+    width: 100px;
+    height: 100px;
+  }
+}
+
 @media (max-width: 700px) {
-  .social-icons {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
+  /* General responsive adjustments */
+  body.has-background { 
+    background-attachment: scroll; 
   }
   
-  /* Create a separate row for the Kakao code on mobile */
+  .page-wrapper { 
+    max-width: 90%; 
+    margin: 5vh auto; 
+    padding: 1.5em; 
+    min-height: 0; 
+  }
+  
+  h1 { 
+    font-size: 1.8em;
+  }
+  
+  h2 { 
+    font-size: 1.3em;
+  }
+  
+  body { 
+    font-size: 15px; 
+  }
+  
+  /* List adjustments */
+  .language-content ul.qigong-features li { 
+    padding-left: 1.5em; 
+  }
+  
+  .language-content ul.qigong-features li::before { 
+    left: 0.3em; 
+  }
+  
+  /* Language switcher */
+  .lang-button { 
+    padding: 0.6em 1.2em; 
+    margin: 0 0.3em; 
+  }
+  
+  /* Header container */
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 1.5em;
+    padding-right: 0;
+  }
+  
+  .profile-photo {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    margin-bottom: 1em;
+    order: 1;
+    margin-top: 1em;
+    right: auto;
+  }
+  
+  .header-container h1 {
+    margin-top: 0;
+    font-size: 1.7em;
+    width: 100%;
+  }
+  
+  /* Social icons */
+  .social-icons {
+    gap: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .social-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .social-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .email-container {
+    flex: 0 0 auto;
+  }
+  
+  .copy-email-btn {
+    padding: 4px 10px;
+    font-size: 0.75em;
+  }
+  
+  /* Kakao code on mobile */
   .kakao-code {
     display: block;
     width: 100%;
-    margin: 10px 0;
+    margin: 10px 0 15px;
     padding: 8px;
     text-align: center;
     background-color: rgba(254, 229, 0, 0.2);
     border-radius: 6px;
-    font-size: 1em;
+    font-size: 0.9em;
   }
 }
