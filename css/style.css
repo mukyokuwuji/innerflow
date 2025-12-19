@@ -1,8 +1,3 @@
-/* ==========================================
-   Base Styles
-   ========================================== */
-
-/* Prevent text size adjustment */
 html { 
   -webkit-text-size-adjust: 100%; 
   -ms-text-size-adjust: 100%; 
@@ -11,19 +6,17 @@ html {
 }
 
 body {
-  /* === FONT: Use Inter as primary for body, Poppins for headers === */
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 400;
   font-size: 16px;
   line-height: 1.7;
-  /* === COLOR: Default text color to near-black === */
+
   color: #222222;
-  background-color: #f5f5f5; /* Lighter background that matches the design better */
+  background-color: #f5f5f5;
   margin: 0;
   padding: 0;
 }
 
-/* Background Image Styling */
 body.has-background {
   background-image: url('/img/frst.jpg');
   background-size: cover;
@@ -38,10 +31,9 @@ h1, h2, h3, h4, h5, h6 {
   color: #111111;
   line-height: 1.3;
   margin: 1.5em 0 0.8em 0;
-  text-align: left; /* Consistent alignment */
+  text-align: left;
 }
 
-/* Specific heading sizes */
 h1 { font-size: 2.2em; margin-top: 0; }
 h2 { font-size: 1.5em; }
 
@@ -53,11 +45,6 @@ p { margin-bottom: 1.2em; }
 /* Utility class */
 .text-center { text-align: center; }
 
-/* ==========================================
-   Layout Structure
-   ========================================== */
-
-/* Main Content "Card" */
 .page-wrapper {
   max-width: 840px;
   margin: 5vh auto;
@@ -69,9 +56,6 @@ p { margin-bottom: 1.2em; }
   min-height: 80vh;
 }
 
-/* ==========================================
-   Language Switcher
-   ========================================== */
 .language-switcher {
   text-align: center;
   margin-bottom: 2.5em;
@@ -107,9 +91,6 @@ p { margin-bottom: 1.2em; }
   cursor: default;
 }
 
-/* ==========================================
-   Language Content Sections
-   ========================================== */
 .language-content {
   display: none;
   width: 100%;
@@ -156,9 +137,6 @@ p { margin-bottom: 1.2em; }
   margin-top: 1.5em; 
 }
 
-/* ==========================================
-   Profile Photo Styling
-   ========================================== */
 .header-container {
   position: relative;
   margin-bottom: 2em;
@@ -182,9 +160,6 @@ p { margin-bottom: 1.2em; }
   transform: scale(1.05);
 }
 
-/* ==========================================
-   Social Media Icons
-   ========================================== */
 .social-icons {
   display: flex;
   align-items: center;
@@ -222,7 +197,6 @@ p { margin-bottom: 1.2em; }
   fill: #333333;
 }
 
-/* Specific icon colors on hover */
 .social-icon.kakao:hover {
   background-color: rgba(254, 229, 0, 0.2);
 }
@@ -247,7 +221,6 @@ p { margin-bottom: 1.2em; }
   fill: #4285F4;
 }
 
-/* Email container styling */
 .email-container {
   display: inline-flex;
   align-items: center;
@@ -304,7 +277,6 @@ p { margin-bottom: 1.2em; }
   transform: translateX(-50%) translateY(0);
 }
 
-/* Styling for KakaoTalk join code */
 .kakao-code {
   font-size: 0.9em;
   margin-left: 5px;
@@ -319,9 +291,6 @@ p { margin-bottom: 1.2em; }
   letter-spacing: 0.5px;
 }
 
-/* ==========================================
-   Page Footer Styles
-   ========================================== */
 .page-footer {
   margin-top: 3em;
   padding-top: 1.5em;
@@ -339,9 +308,6 @@ p { margin-bottom: 1.2em; }
   margin-bottom: 0.5em;
 }
 
-/* ==========================================
-   Responsive Adjustments
-   ========================================== */
 @media (max-width: 900px) {
   .profile-photo {
     width: 100px;
@@ -350,7 +316,7 @@ p { margin-bottom: 1.2em; }
 }
 
 @media (max-width: 700px) {
-  /* General responsive adjustments */
+
   body.has-background { 
     background-attachment: scroll; 
   }
@@ -374,7 +340,6 @@ p { margin-bottom: 1.2em; }
     font-size: 15px; 
   }
   
-  /* List adjustments */
   .language-content ul.qigong-features li { 
     padding-left: 1.5em; 
   }
@@ -383,13 +348,11 @@ p { margin-bottom: 1.2em; }
     left: 0.3em; 
   }
   
-  /* Language switcher */
   .lang-button { 
     padding: 0.6em 1.2em; 
     margin: 0 0.3em; 
   }
   
-  /* Header container */
   .header-container {
     display: flex;
     flex-direction: column;
@@ -415,7 +378,6 @@ p { margin-bottom: 1.2em; }
     width: 100%;
   }
   
-  /* Social icons */
   .social-icons {
     gap: 10px;
     overflow-x: auto;
@@ -444,7 +406,6 @@ p { margin-bottom: 1.2em; }
     font-size: 0.75em;
   }
   
-  /* Kakao code on mobile */
   .kakao-code {
     display: block;
     width: 100%;
@@ -455,4 +416,136 @@ p { margin-bottom: 1.2em; }
     border-radius: 6px;
     font-size: 0.9em;
   }
+}
+
+
+
+
+
+.intro-cta-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 3.5em auto;
+  padding-top: 2em;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  width: 100%;
+}
+
+.intro-cta-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05em;
+  margin-bottom: 1.5em;
+  color: #555;
+  font-weight: 500;
+  text-align: center;
+}
+
+.intro-cta-button {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  color: #333;
+  background-color: transparent;
+  border: 1px solid #333;
+  padding: 12px 28px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.intro-cta-button:hover {
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+}
+
+.article-content {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #222;
+}
+
+.article-content h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2em;
+  margin-bottom: 0.2em;
+  margin-top: 0;
+}
+
+.article-subtitle {
+  font-family: 'Inter', sans-serif;
+  color: #666;
+  font-size: 1.1em;
+  margin-bottom: 2.5em;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.article-content h2 {
+  font-family: 'Poppins', sans-serif;
+  margin-top: 2em;
+  border-left: 4px solid #333;
+  padding-left: 15px;
+  font-size: 1.6em;
+}
+
+.toc-box {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 2em;
+  margin-bottom: 3em;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95em;
+}
+
+.toc-box h3 {
+  margin-top: 0;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 1px;
+  color: #555;
+}
+
+.toc-box ul {
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.toc-box li {
+  margin-bottom: 8px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.toc-box li:last-child {
+  border-bottom: none;
+}
+
+.toc-box a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  display: block;
+}
+
+.toc-box a:hover {
+  color: #005999;
+  padding-left: 5px;
+  transition: 0.2s;
+}
+
+.nav-back {
+  margin-bottom: 2em;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
