@@ -72,4 +72,54 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   // --- End Email Copy Button Functionality ---
 
+  // --- Inline Copy Email Icon Functionality ---
+  const inlineCopyIcons = document.querySelectorAll('.inline-copy-email');
+
+  inlineCopyIcons.forEach(icon => {
+    icon.addEventListener('click', function() {
+      const email = this.getAttribute('data-email');
+      const feedback = this.querySelector('.inline-copy-feedback');
+
+      function showInlineFeedback() {
+        if (feedback) {
+          feedback.classList.add('visible');
+          setTimeout(() => {
+            feedback.classList.remove('visible');
+          }, 2000);
+        }
+      }
+
+      try {
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(email)
+            .then(showInlineFeedback)
+            .catch(() => inlineFallbackCopy(email));
+        } else {
+          inlineFallbackCopy(email);
+        }
+      } catch (err) {
+        console.warn('Copy operation failed:', err);
+      }
+
+      function inlineFallbackCopy(text) {
+        const tempInput = document.createElement('input');
+        tempInput.style.position = 'absolute';
+        tempInput.style.left = '-9999px';
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        tempInput.setSelectionRange(0, 99999);
+        try {
+          if (document.execCommand('copy')) {
+            showInlineFeedback();
+          }
+        } catch (err) {
+          console.warn('execCommand error:', err);
+        }
+        document.body.removeChild(tempInput);
+      }
+    });
+  });
+  // --- End Inline Copy Email Icon Functionality ---
+
 }); // End of DOMContentLoaded listener

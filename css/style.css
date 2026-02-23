@@ -45,6 +45,51 @@ p { margin-bottom: 1.2em; }
 /* Utility class */
 .text-center { text-align: center; }
 
+.text-emphasis {
+  background-color: rgba(0, 89, 153, 0.1);
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+}
+
+.inline-copy-email {
+  cursor: pointer;
+  color: #005999;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.inline-copy-email:hover {
+  color: #003366;
+}
+
+.inline-copy-email svg {
+  vertical-align: -1px;
+}
+
+.inline-copy-email .inline-copy-feedback {
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75em;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.inline-copy-email .inline-copy-feedback.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
 .page-wrapper {
   max-width: 840px;
   margin: 5vh auto;
@@ -570,4 +615,113 @@ ul.qigong-features li::before {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+
+
+/* --- Session entries & Booking Buttons --- */
+.session-entry {
+  padding: 1em 0;
+  border-bottom: 1px solid rgba(0, 89, 153, 0.1);
+}
+
+.session-entry:first-of-type {
+  padding-top: 0.5em;
+}
+
+.session-entry:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.session-entry .next-class-details {
+  margin-bottom: 0.6em;
+}
+
+.booking-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5em;
+}
+
+.book-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.78em;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.2s ease;
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+
+.book-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  color: #fff;
+}
+
+.book-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.book-btn svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* WhatsApp */
+.book-btn--wa {
+  background-color: #5bbe7a;
+}
+.book-btn--wa:hover {
+  background-color: #4aad69;
+}
+
+/* Zalo */
+.book-btn--zalo {
+  background-color: #4a8fd9;
+}
+.book-btn--zalo:hover {
+  background-color: #3d7ec5;
+}
+
+/* Instagram */
+.book-btn--ig {
+  background: linear-gradient(45deg, #d4a054, #c97a6a, #b8567a, #a64f82, #944d88);
+}
+.book-btn--ig:hover {
+  background: linear-gradient(45deg, #c49348, #bb6e5e, #aa4c6f, #984576, #86437c);
+}
+
+/* Facebook Messenger */
+.book-btn--fb {
+  background: linear-gradient(180deg, #5ab4d9, #4a82c4);
+}
+.book-btn--fb:hover {
+  background: linear-gradient(180deg, #4da6cc, #3f74b5);
+}
+
+/* Mobile: stack buttons in 2x2 grid */
+@media (max-width: 700px) {
+  .booking-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+  }
+  
+  .book-btn {
+    justify-content: center;
+    padding: 0.5rem 0.6rem;
+    font-size: 0.76em;
+  }
 }
