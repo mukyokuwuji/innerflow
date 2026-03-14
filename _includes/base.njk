@@ -3,17 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title | default("Qigong for Health and Wellbeing in Da Nang &amp; Hoi An: Classes for All Levels") }}</title>
-
-<link rel="preconnect" href="https://fonts.bunny.net">
-<link href="https://fonts.bunny.net/css?family=inter:wght@400;700&family=poppins:wght@400;700&display=swap" rel="stylesheet" />
-
+    <title>{{ title | default("Inner Flowing - Qigong, Yoga & Sound Healing") }}</title>
+    <meta name="description" content="{{ description | default('High Precision Qigong, Yoga and Sound Healing in Da Nang.') }}">
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=cormorant-garamond:400,500,600&family=josefin-sans:300,400,500&family=inter:400,500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="has-background">
-
+    <nav class="site-nav">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo" aria-label="Inner Flowing home">
+          <span class="nav-brand">Inner Flowing</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="/"{% if page.url == "/" %} class="active"{% endif %}>Home</a></li>
+          <li><a href="/about/"{% if page.url == "/about/" %} class="active"{% endif %}>About Us</a></li>
+          <li><a href="/classes/"{% if page.url == "/classes/" %} class="active"{% endif %}>Classes</a></li>
+          <li><a href="/contact/"{% if page.url == "/contact/" %} class="active"{% endif %}>Contact</a></li>
+        </ul>
+      </div>
+    </nav>
     {{ content | safe }}
-
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; Inner Flowing | UNI Yoga Academy | Vidya Arts | Jenny &amp; Seb {{ build.timestamp | getYear }}</div>
+        <div class="last-updated">Last updated on {{ build.timestamp | displayDate('en-GB') }}</div>
+      </div>
+    </footer>
     <script src="/js/main.js" defer></script>
 </body>
 </html>

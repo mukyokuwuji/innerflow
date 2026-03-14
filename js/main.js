@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // --- Mobile Nav Toggle ---
+  var toggle = document.querySelector('.nav-toggle');
+  var navLinks = document.querySelector('.nav-links');
+  if (toggle && navLinks) {
+    toggle.addEventListener('click', function() {
+      navLinks.classList.toggle('open');
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !expanded);
+    });
+  }
+
 
   // --- Email Copy Button Functionality ---
   const copyButtons = document.querySelectorAll('.copy-email-btn');
