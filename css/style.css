@@ -323,3 +323,45 @@ ul.features li::before {
   font-family: 'Josefin Sans', sans-serif; font-weight: 500;
   font-size: 0.85em; letter-spacing: 1.5px; color: #2E5A6B;
 }
+
+
+
+
+
+/* --- Announcement Box --- */
+.announcement-box {
+  border: 2px solid #2E5A6B;
+  background-color: rgba(46, 90, 107, 0.08);
+  padding: 1.5em 2em;
+  margin: 1.5em 0;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.announcement-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2E5A6B, #5A9EAD, #2E5A6B);
+}
+.announcement-heading {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.82em;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #2E5A6B;
+  margin-bottom: 0.8em;
+  margin-top: 0.5em;
+}
+.announcement-box p {
+  font-size: 0.92em;
+  margin-bottom: 0.6em;
+}
+.announcement-box p:last-child {
+  margin-bottom: 0;
+}
