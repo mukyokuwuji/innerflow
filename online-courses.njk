@@ -238,18 +238,17 @@ permalink: /online-courses/
     <label style="font-family:'Josefin Sans',sans-serif;font-size:0.82em;letter-spacing:1.5px;text-transform:uppercase;color:#2E5A6B;display:block;margin-bottom:0.3em;">Email:</label>
     <input type="email" name="email" required style="width:100%;padding:10px 14px;border:1px solid rgba(46,90,107,0.25);border-radius:6px;font-family:'Inter',sans-serif;font-size:0.95em;background-color:rgba(250,250,248,0.5);outline:none;">
   </p>
-  <p>
-    <label style="font-family:'Josefin Sans',sans-serif;font-size:0.82em;letter-spacing:1.5px;text-transform:uppercase;color:#2E5A6B;display:block;margin-bottom:0.3em;">I am interested in:</label>
-    <select name="interest" required style="width:100%;padding:10px 14px;border:1px solid rgba(46,90,107,0.25);border-radius:6px;font-family:'Inter',sans-serif;font-size:0.95em;background-color:rgba(250,250,248,0.5);outline:none;">
-      <option value="">Please select</option>
-<option value="10h-qigong-in-ytt">10-hour Online Qigong & TCM in UNI YOGA's YTT</option>
-<option value="qigong-monthly">Online Qigong (monthly)</option>
-<option value="200h-qigong-teacher-training">200-Hour Online Qigong Teacher Training</option>
-<option value="ytt-200hr">200-Hour Online Yoga Teacher Training</option>
-<option value="ytt-500hr">500-Hour Online Yoga Teacher Training</option>
-<option value="yin-yoga-monthly">Online Yin Yoga (monthly)</option>
-    </select>
-  </p>
+  <div style="margin-bottom:1em;">
+    <label style="font-family:'Josefin Sans',sans-serif;font-size:0.82em;letter-spacing:1.5px;text-transform:uppercase;color:#2E5A6B;display:block;margin-bottom:0.6em;">I am interested in: (select all that apply)</label>
+    <div style="display:flex;flex-direction:column;gap:0.5em;">
+      <label style="font-size:0.92em;cursor:pointer;display:flex;align-items:flex-start;gap:0.5em;"><input type="checkbox" name="interest[]" value="10h-qigong-in-ytt" style="margin-top:0.25em;accent-color:#2E5A6B;"> 10-hour Online Qigong & TCM in UNI YOGA's YTT</label>
+      <label style="font-size:0.92em;cursor:pointer;display:flex;align-items:flex-start;gap:0.5em;"><input type="checkbox" name="interest[]" value="qigong-monthly" style="margin-top:0.25em;accent-color:#2E5A6B;"> Online Qigong (monthly)</label>
+      <label style="font-size:0.92em;cursor:pointer;display:flex;align-items:flex-start;gap:0.5em;"><input type="checkbox" name="interest[]" value="200h-qigong-teacher-training" style="margin-top:0.25em;accent-color:#2E5A6B;"> 200-Hour Online Qigong Teacher Training</label>
+      <label style="font-size:0.92em;cursor:pointer;display:flex;align-items:flex-start;gap:0.5em;"><input type="checkbox" name="interest[]" value="ytt-200hr" style="margin-top:0.25em;accent-color:#2E5A6B;"> 200-Hour Online Yoga Teacher Training</label>
+      <label style="font-size:0.92em;cursor:pointer;display:flex;align-items:flex-start;gap:0.5em;"><input type="checkbox" name="interest[]" value="ytt-500hr" style="margin-top:0.25em;accent-color:#2E5A6B;"> 500-Hour Online Yoga Teacher Training</label>
+      <label style="font-size:0.92em;cursor:pointer;display:flex;align-items:flex-start;gap:0.5em;"><input type="checkbox" name="interest[]" value="yin-yoga-monthly" style="margin-top:0.25em;accent-color:#2E5A6B;"> Online Yin Yoga (monthly)</label>
+    </div>
+  </div>
   <p>
     <label style="font-family:'Josefin Sans',sans-serif;font-size:0.82em;letter-spacing:1.5px;text-transform:uppercase;color:#2E5A6B;display:block;margin-bottom:0.3em;">Message (optional):</label>
     <textarea name="message" rows="4" style="width:100%;padding:10px 14px;border:1px solid rgba(46,90,107,0.25);border-radius:6px;font-family:'Inter',sans-serif;font-size:0.95em;background-color:rgba(250,250,248,0.5);outline:none;resize:vertical;"></textarea>
