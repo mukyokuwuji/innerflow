@@ -96,7 +96,7 @@ ul.features li::before {
 }
 
 /* --- Practitioners --- */
-.practitioners { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5em; margin: 2em 0; }
+.practitioners { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2em; margin: 2em 0; }
 .practitioner-card { text-align: center; }
 .practitioner-photo {
   width: 140px; height: 140px; border-radius: 50%; object-fit: cover;
