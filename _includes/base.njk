@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title | default("Inner Flowing - Qigong, Yoga & Sound Healing") }}</title>
+    <title>{{ title | default("Inner Flowing: Qigong, Yoga & Sound Healing") }}</title>
     <meta name="description" content="{{ description | default('High Precision Qigong, Yoga and Sound Healing in Da Nang.') }}">
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=cormorant-garamond:400,500,600&family=josefin-sans:300,400,500&family=inter:400,500&display=swap" rel="stylesheet" />
@@ -22,6 +22,7 @@
           <li><a href="/"{% if page.url == "/" %} class="active"{% endif %}>Home</a></li>
           <li><a href="/about/"{% if page.url == "/about/" %} class="active"{% endif %}>About Us</a></li>
           <li><a href="/classes/"{% if page.url == "/classes/" %} class="active"{% endif %}>Studio Schedule</a></li>
+          <li><a href="/rsessions/"{% if page.url == "/rsessions/" %} class="active"{% endif %}>Resort Sessions</a></li>
           <li><a href="/online-courses/"{% if page.url == "/online-courses/" %} class="active"{% endif %}>Online Courses</a></li>
           <li><a href="/contact/"{% if page.url == "/contact/" %} class="active"{% endif %}>Contact</a></li>
         </ul>
