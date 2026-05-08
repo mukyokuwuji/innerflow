@@ -365,3 +365,10 @@ ul.features li::before {
 .announcement-box p:last-child {
   margin-bottom: 0;
 }
+
+
+
+
+
+.photo-half { width: calc(50% - 0.5em); border-radius: 8px; }
+@media (max-width: 700px) { .photo-half { width: 100%; } }
