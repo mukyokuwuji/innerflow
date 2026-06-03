@@ -67,4 +67,40 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+// --- Schedule Manager (Vietnam time UTC+7) ---
+  function updateSchedule() {
+    var now = new Date();
+    var vietnam = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Ho_Chi_Minh' }));
+    var cards = document.querySelectorAll('.session-card[data-start]');
+    var foundUpcoming = false;
+
+    cards.forEach(function(card) {
+      var start = new Date(card.getAttribute('data-start') + ':00');
+      var end = new Date(card.getAttribute('data-end') + ':00');
+      var fiveAfterStart = new Date(start.getTime() + 5 * 60000);
+
+      if (vietnam >= end) {
+        var prev = card.previousElementSibling;
+        card.remove();
+        if (prev && prev.classList.contains('day-header')) {
+          var next = prev.nextElementSibling;
+          if (!next || next.classList.contains('day-header') || !next.classList.contains('session-card')) {
+            prev.remove();
+          }
+        }
+        return;
+      }
+
+      if (!foundUpcoming && vietnam < fiveAfterStart) {
+        card.classList.add('upcoming');
+        foundUpcoming = true;
+      } else {
+        card.classList.remove('upcoming');
+      }
+    });
+  }
+
+  updateSchedule();
+  setInterval(updateSchedule, 30000);
+
 });

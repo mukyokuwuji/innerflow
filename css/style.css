@@ -610,3 +610,22 @@ h3 { margin-bottom: 0.5em; }
   img { max-height: 300px; }
   @page { margin: 2cm; }
 }
+
+
+
+
+
+
+
+
+
+/* --- Upcoming Session Highlight --- */
+.session-card.upcoming {
+  border-left: 3px solid #5A9EAD;
+  padding-left: 1em;
+  animation: gentle-pulse 2.5s ease-in-out infinite;
+}
+@keyframes gentle-pulse {
+  0%, 100% { background-color: transparent; }
+  50% { background-color: rgba(90, 158, 173, 0.06); }
+}
