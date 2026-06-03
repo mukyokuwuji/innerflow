@@ -1,13 +1,11 @@
 {
   "name": "innerflowing-site",
-  "version": "2.0.0",
-  "main": "eleventy.config.js",
+  "version": "4.0.0",
   "scripts": {
     "build": "npx @11ty/eleventy",
     "serve": "npx @11ty/eleventy --serve"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0",
-    "@11ty/eleventy-img": "^6.0.2"
+    "@11ty/eleventy": "^3.0.0"
   }
 }

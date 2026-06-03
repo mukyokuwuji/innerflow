@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+
   // --- Mobile Nav Toggle ---
   var toggle = document.querySelector('.nav-toggle');
   var navLinks = document.querySelector('.nav-links');
@@ -10,127 +11,60 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // --- Nav scroll behavior ---
+  var nav = document.querySelector('.site-nav');
+  if (nav) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 80) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+  }
 
-  // --- Email Copy Button Functionality ---
-  const copyButtons = document.querySelectorAll('.copy-email-btn');
-
-  if (copyButtons.length > 0) {
-    copyButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        // Get the email from the data attribute
-        const email = this.getAttribute('data-email');
-        
-        try {
-          // Try using modern Clipboard API first
-          if (navigator.clipboard) {
-            navigator.clipboard.writeText(email)
-              .then(() => {
-                showCopyFeedback(this);
-              })
-              .catch(err => {
-                // Fall back to execCommand if Clipboard API fails
-                fallbackCopy(email, this);
-              });
-          } else {
-            // Use fallback for browsers without Clipboard API
-            fallbackCopy(email, this);
-          }
-        } catch (err) {
-          console.warn('Copy operation failed:', err);
-          fallbackCopy(email, this);
+  // --- Scroll Reveal ---
+  var reveals = document.querySelectorAll('.reveal');
+  if (reveals.length > 0) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
         }
       });
+    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+    reveals.forEach(function(el) {
+      observer.observe(el);
     });
   }
 
-  // Helper function for execCommand fallback
-  function fallbackCopy(text, buttonElement) {
-    const tempInput = document.createElement('input');
-    tempInput.style.position = 'absolute';
-    tempInput.style.left = '-9999px';
-    tempInput.value = text;
-    document.body.appendChild(tempInput);
-    
-    // Select the text and copy
-    tempInput.select();
-    tempInput.setSelectionRange(0, 99999); // For mobile devices
-    
-    let successful = false;
-    try {
-      successful = document.execCommand('copy');
-    } catch (err) {
-      console.warn('execCommand error:', err);
-    }
-    
-    document.body.removeChild(tempInput);
-    
-    if (successful) {
-      showCopyFeedback(buttonElement);
-    }
+  // --- Back to Top ---
+  var backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 400) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
   }
 
-  // Helper function to show and hide the feedback message
-  function showCopyFeedback(buttonElement) {
-    const feedback = buttonElement.nextElementSibling;
-    if (feedback && feedback.classList.contains('copy-feedback')) {
-      feedback.classList.add('visible');
-      
-      // Hide feedback after 2 seconds
-      setTimeout(() => {
-        feedback.classList.remove('visible');
-      }, 2000);
-    }
-  }
-  // --- End Email Copy Button Functionality ---
-
-  // --- Inline Copy Email Icon Functionality ---
-  const inlineCopyIcons = document.querySelectorAll('.inline-copy-email');
-
-  inlineCopyIcons.forEach(icon => {
-    icon.addEventListener('click', function() {
-      const email = this.getAttribute('data-email');
-      const feedback = this.querySelector('.inline-copy-feedback');
-
-      function showInlineFeedback() {
-        if (feedback) {
-          feedback.classList.add('visible');
-          setTimeout(() => {
-            feedback.classList.remove('visible');
-          }, 2000);
-        }
-      }
-
-      try {
-        if (navigator.clipboard) {
-          navigator.clipboard.writeText(email)
-            .then(showInlineFeedback)
-            .catch(() => inlineFallbackCopy(email));
-        } else {
-          inlineFallbackCopy(email);
-        }
-      } catch (err) {
-        console.warn('Copy operation failed:', err);
-      }
-
-      function inlineFallbackCopy(text) {
-        const tempInput = document.createElement('input');
-        tempInput.style.position = 'absolute';
-        tempInput.style.left = '-9999px';
-        tempInput.value = text;
-        document.body.appendChild(tempInput);
-        tempInput.select();
-        tempInput.setSelectionRange(0, 99999);
-        try {
-          if (document.execCommand('copy')) {
-            showInlineFeedback();
-          }
-        } catch (err) {
-          console.warn('execCommand error:', err);
-        }
-        document.body.removeChild(tempInput);
-      }
+  // --- Copy Email ---
+  var copyBtns = document.querySelectorAll('.copy-email-btn');
+  copyBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var email = this.getAttribute('data-email');
+      var feedback = this.nextElementSibling;
+      navigator.clipboard.writeText(email).then(function() {
+        feedback.classList.add('visible');
+        setTimeout(function() {
+          feedback.classList.remove('visible');
+        }, 2000);
+      });
     });
   });
-  // --- End Inline Copy Email Icon Functionality ---
 
-}); // End of DOMContentLoaded listener
+});

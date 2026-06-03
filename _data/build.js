@@ -1,3 +1,1 @@
-module.exports = {
-  timestamp: new Date()
-};
+module.exports = { timestamp: new Date() };

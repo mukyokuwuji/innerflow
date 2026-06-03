@@ -3,38 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title | default("Inner Flowing: Qigong, Yoga & Sound Healing") }}</title>
-    <meta name="description" content="{{ description | default('Authentic lineage Qigong, precision Yoga and transformative Sound Healing in Da Nang. Studio, outdoor and online classes, Qigong and Yoga teacher training programmes, and private sessions. Led by experienced practitioners with extensive training across Asia.') }}">
+    <title>{{ title | default("Inner Flowing - Authentic Qigong, Precision Yoga & Transformative Sound Healing") }}</title>
+    <meta name="description" content="{{ description | default('Authentic lineage Qigong, precision Yoga and transformative Sound Healing in Da Nang. Studio, outdoor and online classes, teacher training programmes, and private sessions.') }}">
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=cormorant-garamond:400,500,600&family=josefin-sans:300,400,500&family=inter:400,500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.bunny.net/css?family=cormorant-garamond:400,500,600&family=josefin-sans:300,400,500&family=inter:400,500,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<body class="has-background">
+<body>
     <nav class="site-nav">
-      <div class="nav-inner">
-        <a href="/" class="nav-logo" aria-label="Inner Flowing home">
-          <span class="nav-brand">Inner Flowing</span>
-        </a>
-        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-        <ul class="nav-links">
-          <li><a href="/"{% if page.url == "/" %} class="active"{% endif %}>Home</a></li>
-          <li><a href="/about/"{% if page.url == "/about/" %} class="active"{% endif %}>About Us</a></li>
-          <li><a href="/classes/"{% if page.url == "/classes/" %} class="active"{% endif %}>Studio & Outdoor</a></li>
-          <li><a href="/rsessions/"{% if page.url == "/rsessions/" %} class="active"{% endif %}>Resort Sessions</a></li>
-          <li><a href="/online-courses/"{% if page.url == "/online-courses/" %} class="active"{% endif %}>Online Courses</a></li>
-          <li><a href="/contact/"{% if page.url == "/contact/" %} class="active"{% endif %}>Contact</a></li>
-        </ul>
-      </div>
+      <a href="/" class="nav-brand">Inner Flowing</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="/"{% if page.url == "/" %} class="active"{% endif %}>Home</a></li>
+        <li><a href="/about/"{% if page.url == "/about/" %} class="active"{% endif %}>About</a></li>
+        <li><a href="/classes/"{% if page.url == "/classes/" %} class="active"{% endif %}>Studio & Outdoor</a></li>
+        <li><a href="/rsessions/"{% if page.url == "/rsessions/" %} class="active"{% endif %}>Resort Sessions</a></li>
+        <li><a href="/online-courses/"{% if page.url == "/online-courses/" %} class="active"{% endif %}>Online Courses</a></li>
+        <li><a href="/contact/"{% if page.url == "/contact/" %} class="active"{% endif %}>Contact</a></li>
+      </ul>
     </nav>
+
     {{ content | safe }}
+
     <footer class="site-footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; Inner Flowing | Vidya Arts LLC {{ build.timestamp | getYear }}</div>
-        <div class="last-updated">Last updated on {{ build.timestamp | displayDate('en-GB') }}</div>
-      </div>
+      <div class="copyright">&copy; Inner Flowing | Vidya Arts LLC {{ build.timestamp | getYear }}</div>
+      <div class="last-updated">Last updated on {{ build.timestamp | displayDate('en-GB') }}</div>
     </footer>
+
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</a>
     <script src="/js/main.js" defer></script>
 </body>
 </html>
