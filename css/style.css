@@ -623,9 +623,33 @@ h3 { margin-bottom: 0.5em; }
 .session-card.upcoming {
   border-left: 3px solid #5A9EAD;
   padding-left: 1em;
-  animation: gentle-pulse 1.6s ease-in-out infinite;
+  animation: gentle-pulse 2.4s ease-in-out infinite;
 }
 @keyframes gentle-pulse {
   0%, 100% { background-color: transparent; }
   50% { background-color: rgba(46, 90, 107, 0.16); }
+}
+
+
+
+
+
+
+
+
+
+
+.next-label {
+  display: block;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.85em;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #2E5A6B;
+  margin-bottom: 0.4em;
+  animation: pulse-text 2.4s ease-in-out infinite;
+}
+@keyframes pulse-text {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
 }

@@ -93,9 +93,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
       if (!foundUpcoming && vietnam < fiveAfterStart) {
         card.classList.add('upcoming');
+        if (!card.querySelector('.next-label')) {
+          var label = document.createElement('span');
+          label.className = 'next-label';
+          label.textContent = 'NEXT';
+          card.insertBefore(label, card.firstChild);
+        }
         foundUpcoming = true;
       } else {
         card.classList.remove('upcoming');
+        var oldLabel = card.querySelector('.next-label');
+        if (oldLabel) oldLabel.remove();
       }
     });
   }
