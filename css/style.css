@@ -468,6 +468,27 @@ ul.features li::before {
 /* --- Photo Half --- */
 .photo-half { width: calc(50% - 0.5em); border-radius: 16px; }
 
+
+
+
+
+@media (max-width: 1000px) {
+  .nav-toggle { display: flex; }
+  .nav-links {
+    display: none; position: absolute; top: 70px; left: 0; right: 0;
+    background: rgba(247, 245, 240, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column; padding: 1.5em 2em; gap: 0;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links li { padding: 0.8em 0; }
+}
+
+
+
+
+
 /* --- Responsive --- */
 @media (max-width: 900px) {
   .practitioners { grid-template-columns: 1fr; gap: 3em; }
@@ -484,15 +505,6 @@ ul.features li::before {
   .section-inner, .section-narrow { padding: 0 1.5em; }
   .page-wrapper { padding: 0 1.5em; margin-top: 80px; }
   .site-nav { padding: 0 1.5em; }
-  .nav-toggle { display: flex; }
-  .nav-links {
-    display: none; position: absolute; top: 70px; left: 0; right: 0;
-    background: rgba(247, 245, 240, 0.98);
-    flex-direction: column; padding: 1.5em 2em; gap: 0;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
-  }
-  .nav-links.open { display: flex; }
-  .nav-links li { padding: 0.8em 0; }
   .photo-grid { grid-template-columns: 1fr; }
   .photo-half { width: 100%; }
   .practitioner-photo { width: 160px; height: 160px; }
@@ -501,6 +513,11 @@ ul.features li::before {
   .booking-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; }
   .book-btn { justify-content: center; font-size: 0.76em; }
   .section--teal .cta-button { display: block; margin: 0.5em auto; width: fit-content; }
+  .cta-button {
+    display: block;
+    width: fit-content;
+    margin: 0.5em auto;
+  }
 }
 
 
