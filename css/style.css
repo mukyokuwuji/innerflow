@@ -670,3 +670,21 @@ h3 { margin-bottom: 0.5em; }
   0%, 100% { opacity: 0.3; }
   50% { opacity: 1; }
 }
+
+
+
+
+
+
+
+
+
+
+/* --- Blinking Links --- */
+.blink-link {
+  animation: link-blink 1.6s ease-in-out infinite;
+}
+@keyframes link-blink {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
