@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title | default("Inner Flowing - Authentic Qigong, Precision Yoga & Transformative Sound Healing") }}</title>
-    <meta name="description" content="{{ description | default('Authentic lineage Qigong, precision Yoga and transformative Sound Healing in Da Nang. Studio, outdoor and online classes, teacher training programmes, and private sessions.') }}">
+    <title>{{ title | default("Inner Flowing - Authentic Lineage Qigong in Da Nang") }}</title>
+    <meta name="description" content="{{ description | default('Authentic lineage Qigong in Da Nang and online. Outdoor classes, one-to-one online courses, private sessions and a 200-hour teacher training programme.') }}">
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=cormorant-garamond:400,500,600&family=josefin-sans:300,400,500&family=inter:400,500,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/css/style.css">
@@ -18,9 +18,9 @@
       <ul class="nav-links">
         <li><a href="/"{% if page.url == "/" %} class="active"{% endif %}>Home</a></li>
         <li><a href="/about/"{% if page.url == "/about/" %} class="active"{% endif %}>About</a></li>
-        <li><a href="/classes/"{% if page.url == "/classes/" %} class="active"{% endif %}>Studio & Outdoor</a></li>
-        <li><a href="/rsessions/"{% if page.url == "/rsessions/" %} class="active"{% endif %}>Resort Sessions</a></li>
-        <li><a href="/online-courses/"{% if page.url == "/online-courses/" %} class="active"{% endif %}>Online Courses</a></li>
+        <li><a href="/classes/"{% if page.url == "/classes/" %} class="active"{% endif %}>Schedule</a></li>
+        <li><a href="/online-courses/"{% if "/online-courses/" in page.url %} class="active"{% endif %}>Online Courses</a></li>
+        <li><a href="/friends/"{% if page.url == "/friends/" %} class="active"{% endif %}>Friends</a></li>
         <li><a href="/contact/"{% if page.url == "/contact/" %} class="active"{% endif %}>Contact</a></li>
       </ul>
     </nav>
