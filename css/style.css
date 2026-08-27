@@ -694,3 +694,46 @@ h3 { margin-bottom: 0.5em; }
 /* --- CTA container (used on why-qigong-training) --- */
 .cta-container { display: flex; flex-direction: column; align-items: center; margin: 3em auto 1em; padding-top: 2em; border-top: 1px solid rgba(46, 90, 107, 0.1); width: 100%; }
 .cta-text { font-family: 'Inter', sans-serif; font-size: 1.05em; margin-bottom: 1.5em; color: #666; font-weight: 500; text-align: center; }
+
+
+
+
+
+
+
+
+
+
+.credentials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5em;
+  flex-wrap: wrap;
+  margin: 2em auto;
+  max-width: 700px;
+}
+.credentials img {
+  max-height: 96px;
+  max-width: 200px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+.credentials img:hover { opacity: 1; }
+.credentials--hero { margin: 0 auto 2.5em; opacity: 0; animation: fadeUp 1s ease 0.1s forwards; }
+.credentials-caption {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72em;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #8A9A9E;
+  text-align: center;
+  margin-bottom: 1.2em;
+}
+@media (max-width: 700px) {
+  .credentials { gap: 1.8em; }
+  .credentials img { max-height: 70px; max-width: 150px; }
+}
