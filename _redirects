@@ -1,0 +1,4 @@
+/friends    /    301
+/friends/*  /    301
+/classes    /online-courses/    301
+/classes/*  /online-courses/    301
