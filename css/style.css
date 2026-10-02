@@ -749,14 +749,11 @@ h3 { margin-bottom: 0.5em; }
 
 /* === Tighter spacing around photos === */
 .photo-hero { margin: 1.5em 0 !important; }
-.section:has(> .section-narrow > .photo-hero:only-child),
-.section:has(> .section-inner > .photo-hero:only-child) {
-  padding-top: 0 !important;
-  padding-bottom: 1.5em !important;
-}
-.section:has(+ .section > .section-narrow > .photo-hero:only-child) {
-  padding-bottom: 3em !important;
-}
+.section:has(> .section-narrow > .photo-hero:first-child) { padding-top: 0 !important; }
+.section:has(> .section-narrow > .photo-hero:only-child) { padding-top: 0 !important; padding-bottom: 1.5em !important; }
+.section:has(+ .section > .section-narrow > .photo-hero:first-child) { padding-bottom: 2em !important; }
+.section:has(> .section-narrow > .photo-hero:only-child) + .section:not([style*="padding-top:0"]) { padding-top: 2.5em !important; }
+.practitioners { margin-top: 1.5em; }
 
 
 
@@ -781,3 +778,50 @@ h3 { margin-bottom: 0.5em; }
   font-size: 0.85em; color: #8A9A9E; font-style: italic;
   text-align: center; margin-top: 0.6em;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* === Home page opening === */
+.hero--photo {
+  min-height: 100vh; min-height: 100svh; padding: 2em;
+  background: linear-gradient(rgba(20,40,48,0.30), rgba(20,40,48,0.55)), url('/img/qigong-sunrise.jpg') center 60% / cover no-repeat;
+}
+.hero--photo .hero-title {
+  font-family: 'Philosopher', 'Cormorant Garamond', Georgia, serif;
+  font-weight: 400; color: #fff; letter-spacing: 3px;
+  text-shadow: 0 2px 24px rgba(0,0,0,0.25);
+}
+.hero--photo .hero-tagline { color: rgba(255,255,255,0.92); text-shadow: 0 1px 12px rgba(0,0,0,0.3); }
+.hero--photo .hero-scroll span { background: linear-gradient(to bottom, #fff, transparent); }
+.nav-brand { font-family: 'Philosopher', 'Cormorant Garamond', Georgia, serif; font-weight: 400; }
+body:has(.hero--photo) .site-nav:not(.scrolled) .nav-brand,
+body:has(.hero--photo) .site-nav:not(.scrolled) .nav-links a { color: #fff; }
+body:has(.hero--photo) .site-nav:not(.scrolled) .nav-links a::after,
+body:has(.hero--photo) .site-nav:not(.scrolled) .nav-toggle span { background-color: #fff; }
+@media (max-width: 1000px) {
+  body:has(.hero--photo) .site-nav:not(.scrolled) .nav-links a { color: #666; }
+  body:has(.hero--photo) .site-nav:not(.scrolled) .nav-links a.active { color: #2E5A6B; }
+  body:has(.hero--photo) .site-nav:not(.scrolled) .nav-links a::after { background-color: #2E5A6B; }
+}
+
+
+
+
+
+
+
+
+
+
+/* === Philosopher font, hosted on this site === */
+@font-face { font-family: 'Philosopher'; src: url('fonts/philosopher-400.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Philosopher'; src: url('fonts/philosopher-700.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
