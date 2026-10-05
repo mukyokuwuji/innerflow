@@ -825,3 +825,17 @@ body:has(.hero--photo) .site-nav:not(.scrolled) .nav-toggle span { background-co
 /* === Philosopher font, hosted on this site === */
 @font-face { font-family: 'Philosopher'; src: url('fonts/philosopher-400.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: 'Philosopher'; src: url('fonts/philosopher-700.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+
+
+
+
+
+
+
+
+
+
+/* === Centre all buttons on phones (overrides one-sided margins written into pages) === */
+@media (max-width: 700px) {
+  .cta-button { margin-left: auto !important; margin-right: auto !important; }
+}
