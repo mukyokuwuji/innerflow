@@ -850,10 +850,10 @@ body:has(.hero--photo) .site-nav:not(.scrolled) .nav-toggle span { background-co
 
 
 /* === Tighter text spacing across the site === */
-body { line-height: 1.65; }
-p { margin-bottom: 1em; }
-.section { padding: 4em 0; }
-.faq-item { padding: 0.9em 0; }
+body { line-height: 1.55; }
+p { margin-bottom: 0.75em; }
+.section { padding: 3em 0; }
+.faq-item { padding: 0.7em 0; }
 @media (max-width: 700px) {
-  .section { padding: 3em 0; }
+  .section { padding: 2.25em 0; }
 }
